@@ -6,11 +6,11 @@ var tbody = d3.select("tbody");
 
 //Fill Table
 tableData.forEach((ufo) => {
-    var row = tbody.append("tr");
-    Object.entries(ufo).forEach(([key, value]) => {
-        var cell = row.append("td");
-        cell.text(value);
-    });
+  var row = tbody.append("tr");
+  Object.entries(ufo).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+  });
 });
 
 //Select Button
@@ -38,14 +38,14 @@ function runEnter() {
   console.log(tableData);
 
   //Filter Data
-  var filteredData = tableData.filter(ufoforday => ufoforday.datetime === inputValue);
+  var filteredData = tableData.filter(ufo_sightings => ufo_sightings.datetime === inputValue);
 
   console.log(filteredData);
 
   //Fill Table with Filtered Data
-  filteredData.forEach((ufosightings) => {
+  filteredData.forEach((sightings) => {
     var row = tbody.append("tr");
-    Object.entries(ufosightings).forEach(([key, value]) => {
+    Object.entries(sightings).forEach(([key, value]) => {
         var cell = row.append("td");
         cell.text(value);
     });
